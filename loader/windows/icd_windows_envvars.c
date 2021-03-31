@@ -65,11 +65,6 @@ static bool khrIcd_IsHighIntegrityLevel()
 }
 
 char *khrIcd_secure_getenv(const char *name) {
-    if (khrIcd_IsHighIntegrityLevel()) {
-        KHR_ICD_TRACE("Running at a high integrity level, so secure_getenv is returning NULL\n");
-        return NULL;
-    }
-
     return khrIcd_getenv(name);
 }
 
